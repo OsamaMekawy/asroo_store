@@ -73,6 +73,10 @@ flutter:
   assets:
     - .env.dev
     - .env.production
+    - assets/images/core/empty_screen.png
+    - assets/images/core/no_network.jpg
+    - assets/images/core/splash.jpg
+    - assets/images/core/page_under_build.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
