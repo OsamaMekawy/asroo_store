@@ -1,0 +1,10 @@
+flutter_native_splash:
+  # Specify a valid hexadecimal color value (e.g., #6EC1FF)
+  color: "#6EC1FF"  # Corrected hexadecimal color value
+
+  # Specify the splash screen image path
+  image: assets/images/core/splash_ios_android_11.png
+
+  android_12:
+    image: assets/images/core/splash_android_12.png
+    color: "#6EC1FF"  # Corrected hexadecimal color value for Android 12
