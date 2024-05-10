@@ -2,6 +2,7 @@ import 'package:asro/core/app/connectivity_controller.dart';
 import 'package:asro/core/common/screens/no_network_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AsrooStoreApp extends StatelessWidget {
   const AsrooStoreApp({super.key});
@@ -13,31 +14,35 @@ class AsrooStoreApp extends StatelessWidget {
       valueListenable: ConnrctivityController.instance.isConnected,
       builder:(_ ,value,__){
         if(value){
-            return MaterialApp(
-      title: 'Asroo Store',
-      theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      builder: (context,widget){
-        return Scaffold(
-          body: Builder(
-            builder: (context){
-              ConnrctivityController.instance.init();
-              return widget!;
-
-            },
-          ),
-        );
-      },
-      home:  Scaffold(
-        appBar: AppBar(
-          title: const Text('Asroo Store'),
-          backgroundColor: Colors.deepPurple,
-        )  ,
-      ),
-    );
+            return ScreenUtilInit(
+              designSize: const Size(375, 812),
+              minTextAdapt: true,
+              child: MaterialApp(
+                    title: 'Asroo Store',
+                    theme: ThemeData(
+                      
+                      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                      useMaterial3: true,
+                    ),
+                    builder: (context,widget){
+                      return Scaffold(
+                        body: Builder(
+              builder: (context){
+                ConnrctivityController.instance.init();
+                return widget!;
+              
+              },
+                        ),
+                      );
+                    },
+                    home:  Scaffold(
+                      appBar: AppBar(
+                        title: const Text('Asroo Store'),
+                        backgroundColor: Colors.deepPurple,
+                      )  ,
+                    ),
+                  ),
+            );
         }else{
             return MaterialApp(
       debugShowCheckedModeBanner: false,
