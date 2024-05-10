@@ -1,5 +1,6 @@
 import 'package:asro/core/app/connectivity_controller.dart';
 import 'package:asro/core/common/screens/no_network_screen.dart';
+import 'package:asro/core/routes/app_routes.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,6 +42,8 @@ class AsrooStoreApp extends StatelessWidget {
                         backgroundColor: Colors.deepPurple,
                       )  ,
                     ),
+                    onGenerateRoute: AppRoutes.onGenerateRoute,
+                    initialRoute: AppRoutes.testOne,
                   ),
             );
         }else{
