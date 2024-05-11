@@ -4,54 +4,41 @@ description: "A new Flutter project."
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.4.0-190.1.beta <4.0.0'
 
-
 dependencies:
+  connectivity_plus: ^6.0.3
+  cupertino_icons: ^1.0.6
+  firebase_core: ^2.30.1
   flutter:
     sdk: flutter
-
-
- 
-  cupertino_icons: ^1.0.6
-  
-  # Core
-  
-  connectivity_plus: ^6.0.3
   flutter_dotenv: ^5.1.0
-  flutter_screenutil: ^5.9.0
+  flutter_localization: ^0.2.0
   flutter_native_splash: ^2.4.0
-  
-  # Firebase
-  firebase_core: ^2.30.1
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
   very_good_analysis: ^5.1.0
-  flutter_launcher_icons: ^0.13.1 
 
 flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/app_icon.jpg"
   adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/icons/play_store_512.png"  
-
+  adaptive_icon_foreground: "assets/icons/play_store_512.png"
 
   flutter_lints: ^3.0.0
 
-
 flutter:
 
- 
   uses-material-design: true
 
- 
   assets:
     - .env.dev
     - .env.production
@@ -62,11 +49,9 @@ flutter:
     - assets/icons/play_store_512.png
     - assets/images/core/splash_ios_android_11.png
     - assets/images/core/splash_android_12.png
+    - lang/ar.json
+    - lang/en.json
 
-
- 
-
- 
   fonts:
     - family: Cairo
       fonts:
@@ -85,4 +70,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
- 
