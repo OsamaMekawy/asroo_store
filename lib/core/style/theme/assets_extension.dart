@@ -36,12 +36,12 @@ class MyAssets extends ThemeExtension<MyAssets> {
     );
   }
 
-  // static const MyAssets dark = MyAssets(
-  //   bigNavBar: AppImages.bigIconNavBarDark,
-  //   homeBg: AppImages.homeBgDark,
-  // );
-  // static const MyAssets light = MyAssets(
-  //   bigNavBar: AppImages.bigIconNavBarLight,
-  //   homeBg: AppImages.homeBgLight,
-  // );
+  static const MyAssets dark = MyAssets(
+    bigNavBar: AppImages.bigIconNavBarDark,
+    homeBg: AppImages.homeBgDark,
+  );
+  static const MyAssets light = MyAssets(
+    bigNavBar: AppImages.bigIconNavBarLight,
+    homeBg: AppImages.homeBgLight,
+  );
 }

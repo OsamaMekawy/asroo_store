@@ -6,5 +6,15 @@ class FontFamilyHelper {
 
   static const String poppinsEnglish = 'Poppins';
 
-
+    static String geLocalozedFontFamily() {
+    final currentLanguage = 'ar';
+    // SharedPref().getString(PrefKeys.language);
+    if (currentLanguage == 'ar') {
+      return cairoArabic;
+    } else {
+      return poppinsEnglish;
+    }
+  }
 }
+
+

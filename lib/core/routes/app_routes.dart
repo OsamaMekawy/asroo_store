@@ -1,26 +1,24 @@
 
 import 'package:asro/core/common/screens/under_build_screen.dart';
 import 'package:asro/core/routes/base_route.dart';
-import 'package:asro/test_one.dart';
-import 'package:asro/test_two.dart';
+import 'package:asro/features/auth/presentation/refactors/login_body.dart';
+import 'package:asro/features/auth/presentation/screens/login_screen.dart';
+
 import 'package:flutter/material.dart';
 
 
 class AppRoutes {
-  static const String testOne = 'testOne';
-  static const String testTwo = 'testTwo';
+  static const String login = 'login';
+
 
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
-      case testOne:
-        return BaseRoute(page: const TestOneScreen() );
+      case login:
+        return BaseRoute(page: const LoginScreen() );
        
-      case testTwo:
-        return BaseRoute(
-          page: const TestTwoScreen()
-        );
+      
       
 
        default:
