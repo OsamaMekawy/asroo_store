@@ -1,6 +1,7 @@
 import 'package:asro/core/app/connectivity_controller.dart';
 import 'package:asro/core/common/screens/no_network_screen.dart';
 import 'package:asro/core/routes/app_routes.dart';
+import 'package:asro/core/style/theme/app_theme.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,11 +21,7 @@ class AsrooStoreApp extends StatelessWidget {
               minTextAdapt: true,
               child: MaterialApp(
                     title: 'Asroo Store',
-                    theme: ThemeData(
-                      
-                      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                      useMaterial3: true,
-                    ),
+                    theme: themeDark(),
                     builder: (context,widget){
                       return Scaffold(
                         body: Builder(
@@ -32,7 +29,7 @@ class AsrooStoreApp extends StatelessWidget {
                 ConnrctivityController.instance.init();
                 return widget!;
               
-              },
+                       },
                         ),
                       );
                     },
