@@ -1,9 +1,11 @@
 
+import 'package:asro/core/language/app_localization.dart';
+import 'package:asro/core/style/theme/colors_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExt on BuildContext {
-  //color
-//   MyColors get color => Theme.of(this).extension<MyColors>()!;
+ // color
+  MyColors get color => Theme.of(this).extension<MyColors>()!;
 
 //   // images
 //   MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
@@ -11,10 +13,10 @@ extension ContextExt on BuildContext {
 //   // style
 //   TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
-// //Language
-//   String translate(String langkey) {
-//     return AppLocalizations.of(this)!.translate(langkey).toString();
-//   }
+//Language
+  String translate(String langkey) {
+    return AppLocalizations.of(this)!.translate(langkey).toString();
+  }
 
   //Navigation
 
