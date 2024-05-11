@@ -10,6 +10,7 @@ environment:
   sdk: '>=3.4.0-190.1.beta <4.0.0'
 
 dependencies:
+  animate_do: ^3.3.4
   connectivity_plus: ^6.0.3
   cupertino_icons: ^1.0.6
   firebase_core: ^2.30.1
@@ -51,6 +52,9 @@ flutter:
     - assets/images/core/splash_android_12.png
     - lang/ar.json
     - lang/en.json
+    - assets/images/admin/
+    - assets/images/customer/
+    - assets/svg/
 
   fonts:
     - family: Cairo
