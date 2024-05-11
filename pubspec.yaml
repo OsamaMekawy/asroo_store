@@ -79,10 +79,10 @@ flutter:
           style: italic
     - family: Poppins
       fonts:
-        - asset: assets/fonts/arabic/cairo/Poppins-Bold.ttf
+        - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
           weight: 700
-        - asset: assets/fonts/arabic/cairo/Poppins-Medium.ttf
+        - asset: assets/fonts/english/poppins/Poppins-Medium.ttf
           weight: 500
-        - asset: assets/fonts/arabic/cairo/Poppins-Regular.ttf
+        - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
  

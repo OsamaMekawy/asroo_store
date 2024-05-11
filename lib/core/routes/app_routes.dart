@@ -15,11 +15,11 @@ class AppRoutes {
     final args = settings.arguments;
     switch (settings.name) {
       case testOne:
-        return BaseRoute(page: TestOneScreen() );
+        return BaseRoute(page: const TestOneScreen() );
        
       case testTwo:
         return BaseRoute(
-          page: TestTwoScreen()
+          page: const TestTwoScreen()
         );
       
 
