@@ -1,4 +1,6 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:asro/core/service/sharedPrefereces/pref_keys.dart';
+import 'package:asro/core/service/sharedPrefereces/shared_pref.dart';
 
 import 'package:flutter/material.dart';
 
@@ -89,21 +91,17 @@ class CustomFadeInRight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInRight(
+    return 
+     SharedPref().getString(PrefKeys.language) == 'ar'
+        ? FadeInRight(
+            delay: const Duration(milliseconds: 300),
+            duration: Duration(milliseconds: duration),
+            child: child,
+          )
+        : FadeInLeft(
             delay: const Duration(milliseconds: 300),
             duration: Duration(milliseconds: duration),
             child: child,
           );
-    //  SharedPref().getString(PrefKeys.language) == 'ar'
-    //     ? FadeInRight(
-    //         delay: const Duration(milliseconds: 300),
-    //         duration: Duration(milliseconds: duration),
-    //         child: child,
-    //       )
-    //     : FadeInLeft(
-    //         delay: const Duration(milliseconds: 300),
-    //         duration: Duration(milliseconds: duration),
-    //         child: child,
-    //       );
   }
 }

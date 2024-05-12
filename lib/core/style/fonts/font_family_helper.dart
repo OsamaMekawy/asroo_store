@@ -1,4 +1,7 @@
 
+import 'package:asro/core/service/sharedPrefereces/pref_keys.dart';
+import 'package:asro/core/service/sharedPrefereces/shared_pref.dart';
+
 class FontFamilyHelper {
   const FontFamilyHelper._();
 
@@ -7,7 +10,7 @@ class FontFamilyHelper {
   static const String poppinsEnglish = 'Poppins';
 
     static String geLocalozedFontFamily() {
-    final currentLanguage = 'ar';
+    final currentLanguage = SharedPref().getString(PrefKeys.language);
     // SharedPref().getString(PrefKeys.language);
     if (currentLanguage == 'ar') {
       return cairoArabic;
