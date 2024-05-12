@@ -6,17 +6,21 @@ import 'package:asro/core/routes/app_routes.dart';
 import 'package:asro/core/style/fonts/font_widget_helper.dart';
 import 'package:asro/features/auth/presentation/widgets/auth_title_info.dart';
 import 'package:asro/features/auth/presentation/widgets/dark_lang_buttons.dart';
-import 'package:asro/features/auth/presentation/widgets/login/login_button.dart';
 import 'package:asro/features/auth/presentation/widgets/login/login_text_form.dart';
+import 'package:asro/features/auth/presentation/widgets/sign_up/signup_button.dart';
+import 'package:asro/features/auth/presentation/widgets/sign_up/signup_text_form.dart';
+import 'package:asro/features/auth/presentation/widgets/sign_up/user_avatar_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+import '../widgets/login/login_button.dart';
+
+class SignUpBody extends StatelessWidget {
+  const SignUpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: SingleChildScrollView(
         child: Column(
@@ -31,15 +35,17 @@ class LoginBody extends StatelessWidget {
               title: context.translate(LangKeys.login),
               description: context.translate(LangKeys.welcome),
             ),
+            SizedBox(height: 10.h),
+           const UserAvatarImage(),
 
             SizedBox(height: 30.h),
 
-            // login TextForm
-            const LoginTextForm(),
+            // signup TextForm
+            const SignUpTextForm(),
 
             SizedBox(height: 30.h),
-            //LoginButton
-            const LoginButton(),
+            //SignUpButton
+            const SignUpButton(),
 
             SizedBox(height: 30.h),
 
@@ -51,7 +57,7 @@ class LoginBody extends StatelessWidget {
                   context.pushReplacementNamed(AppRoutes.signup);
                 },
                 child: TextApp(
-                  text: context.translate(LangKeys.createAccount),
+                  text: context.translate(LangKeys.youHaveAccount),
                   theme: context.textStyle.copyWith(
                     fontSize: 16.sp,
                     fontWeight: FontWeightHelper.bold,
