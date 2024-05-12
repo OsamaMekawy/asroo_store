@@ -50,11 +50,9 @@ class AsrooStoreApp extends StatelessWidget {
                     },
                     home:  Scaffold(
                       appBar: AppBar(
-                        title: const Text('Asroo Store'),
-                        
+                        title: const Text('Asroo Store'),   
                         backgroundColor: Colors.deepPurple,
-                      )  ,
-                      
+                      ),                      
                     ),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                     initialRoute: AppRoutes.login,
