@@ -13,6 +13,7 @@ dependencies:
   animate_do: ^3.3.4
   connectivity_plus: ^6.0.3
   cupertino_icons: ^1.0.6
+  dio: ^5.4.3+1
   firebase_core: ^2.30.1
   flutter:
     sdk: flutter
@@ -23,6 +24,10 @@ dependencies:
   flutter_screenutil: ^5.9.0
   freezed_annotation: ^2.4.1
   get_it: ^7.7.0
+  
+  pretty_dio_logger: ^1.3.1
+  retrofit: ^4.1.0
+  
   shared_preferences: ^2.2.3
 
 dev_dependencies:
@@ -31,6 +36,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.5.2
+  json_serializable: ^6.8.0
+  retrofit_generator: ^8.1.0
   very_good_analysis: ^5.1.0
 
 flutter_icons:
@@ -43,6 +50,8 @@ flutter_icons:
   flutter_lints: ^3.0.0
 
 flutter:
+
+ # dart run build_runner build --delete-conflicting-outputs
 
   uses-material-design: true
 
