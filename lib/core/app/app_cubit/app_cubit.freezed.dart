@@ -349,10 +349,10 @@ class __$$LanguageChangeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? locale = freezed,
+    Object? locale = null,
   }) {
     return _then(_$LanguageChangeStateImpl(
-      locale: freezed == locale
+      locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as Locale,
@@ -378,12 +378,11 @@ class _$LanguageChangeStateImpl implements LanguageChangeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LanguageChangeStateImpl &&
-            const DeepCollectionEquality().equals(other.locale, locale));
+            (identical(other.locale, locale) || other.locale == locale));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
+  int get hashCode => Object.hash(runtimeType, locale);
 
   @JsonKey(ignore: true)
   @override

@@ -1,5 +1,7 @@
 
 import 'package:asro/core/app/app_cubit/app_cubit.dart';
+import 'package:asro/core/service/graphQl/api_sevice.dart';
+import 'package:asro/core/service/graphQl/dio_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -24,12 +26,11 @@ Future<void> setupInjector() async {
 }
 
 Future<void> _initCore() async {
-  // final dio = DioFactory.getDio();
+   final dio = DioFactory.getDio();
   final navigatorKey = GlobalKey<NavigatorState>();
 
-  sl
-    ..registerFactory(AppCubit.new);
-   //  ..registerLazySingleton<ApiService>(() => ApiService(dio))
+  sl..registerFactory(AppCubit.new)
+   ..registerLazySingleton<ApiService>(() => ApiService(dio));
    // ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
    // ..registerFactory(() => UploadImageCubit(sl()))
    // ..registerFactory(ShareCubit.new)
