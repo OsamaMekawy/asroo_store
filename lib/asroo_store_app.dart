@@ -68,7 +68,13 @@ class AsrooStoreApp extends StatelessWidget {
                       ),
                     ),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: AppRoutes.login,
+                    initialRoute:  SharedPref()
+                                .getString(PrefKeys.accessToken) !=
+                            null
+                        ? SharedPref().getString(PrefKeys.userRole) != 'admin'
+                            ? AppRoutes.mainCustomer
+                            : AppRoutes.homeAdmin
+                        : AppRoutes.login,
                   );
                 },
               ),
@@ -76,6 +82,7 @@ class AsrooStoreApp extends StatelessWidget {
           );
         } else {
           return MaterialApp(
+            title: 'No Network',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.deepPurple,
