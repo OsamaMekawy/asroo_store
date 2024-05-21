@@ -86,6 +86,6 @@ class _SignUpTextFormState extends State<SignUpTextForm> {
             )
         ],
       ),
-    );;
+    );
   }
 }

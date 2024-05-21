@@ -2,6 +2,9 @@
 import 'package:asro/core/app/app_cubit/app_cubit.dart';
 import 'package:asro/core/service/graphQl/api_sevice.dart';
 import 'package:asro/core/service/graphQl/dio_factory.dart';
+import 'package:asro/features/auth/data/data_source/auth_data_source.dart';
+import 'package:asro/features/auth/data/repos/auth_repos.dart';
+import 'package:asro/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -9,7 +12,7 @@ final sl = GetIt.instance;
 
 Future<void> setupInjector() async {
   await _initCore();
-  // await _initAuth();
+   await _initAuth();
   // await _initDashBoard();
   // await _initCategoriesAdmin();
   // await _initProductsAdmin();
@@ -38,12 +41,12 @@ Future<void> _initCore() async {
    // ..registerLazySingleton(() => UploadImageDataSource(sl()));
 }
 
-// Future<void> _initAuth() async {
-//   sl
-//     ..registerFactory(() => AuthBloc(sl()))
-//     ..registerLazySingleton(() => AuthRepos(sl()))
-//     ..registerLazySingleton(() => AuthDataSource(sl()));
-// }
+Future<void> _initAuth() async {
+  sl
+    ..registerFactory(() => AuthBloc(sl()))
+    ..registerLazySingleton(() => AuthRepos(sl()))
+    ..registerLazySingleton(() => AuthDataSource(sl()));
+}
 
 // Future<void> _initDashBoard() async {
 //   sl
