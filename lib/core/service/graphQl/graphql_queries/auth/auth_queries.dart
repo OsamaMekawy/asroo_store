@@ -1,6 +1,7 @@
 
 
 import 'package:asro/features/auth/data/models/login_request_body.dart';
+import 'package:asro/features/auth/data/models/signup_request.dart';
 
 class AuthQueries {
   factory AuthQueries() {
@@ -27,30 +28,30 @@ class AuthQueries {
     };
   }
 
-  // Map<String, dynamic> signUpMapQuery({required SignUpRequestBody body}) {
-  //   return {
-  //     'query': r'''
-  //             mutation SignUp($name: String!, $email: String! , $password: String!, $avatar: String!) {
-  //             addUser(
-  //               data: {
-  //                 name: $name
-  //                 email: $email
-  //                 password:$password
-  //                 avatar: $avatar
-  //                 role: customer
-  //               }
-  //             ) {
-  //               id
-  //               email
-  //             }
-  //           }
-  //       ''',
-  //     'variables': {
-  //       'name': body.name,
-  //       'email': body.email,
-  //       'password': body.password,
-  //       'avatar': body.avatar,
-  //     },
-  //   };
-  // }
+  Map<String, dynamic> signUpMapQuery({required SignUpRequestBody body}) {
+    return {
+      'query': r'''
+              mutation SignUp($name: String!, $email: String! , $password: String!, $avatar: String!) {
+              addUser(
+                data: {
+                  name: $name
+                  email: $email
+                  password:$password
+                  avatar: $avatar
+                  role: customer
+                }
+              ) {
+                id
+                email
+              }
+            }
+        ''',
+      'variables': {
+        'name': body.name,
+        'email': body.email,
+        'password': body.password,
+        'avatar': body.avatar,
+      },
+    };
+  }
 }

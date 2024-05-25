@@ -1,5 +1,8 @@
 
 import 'package:asro/core/app/app_cubit/app_cubit.dart';
+import 'package:asro/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:asro/core/app/upload_image/data_source/upload_image_data_source.dart';
+import 'package:asro/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:asro/core/service/graphQl/api_sevice.dart';
 import 'package:asro/core/service/graphQl/dio_factory.dart';
 import 'package:asro/features/auth/data/data_source/auth_data_source.dart';
@@ -33,12 +36,12 @@ Future<void> _initCore() async {
   final navigatorKey = GlobalKey<NavigatorState>();
 
   sl..registerFactory(AppCubit.new)
-   ..registerLazySingleton<ApiService>(() => ApiService(dio));
+   ..registerLazySingleton<ApiService>(() => ApiService(dio))
    // ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
-   // ..registerFactory(() => UploadImageCubit(sl()))
+    ..registerFactory(() => UploadImageCubit(sl()))
    // ..registerFactory(ShareCubit.new)
-   // ..registerLazySingleton(() => UploadImageRepo(sl()))
-   // ..registerLazySingleton(() => UploadImageDataSource(sl()));
+    ..registerLazySingleton(() => UploadImageRepo(sl()))
+    ..registerLazySingleton(() => UploadImageDataSource(sl()));
 }
 
 Future<void> _initAuth() async {

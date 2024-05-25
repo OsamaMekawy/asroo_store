@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:asro/core/service/sharedPrefereces/pref_keys.dart';
 import 'package:asro/core/service/sharedPrefereces/shared_pref.dart';
 import 'package:asro/features/auth/data/models/login_request_body.dart';
+import 'package:asro/features/auth/data/models/signup_request.dart';
 import 'package:asro/features/auth/data/repos/auth_repos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,6 +17,7 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._repo) : super(const _Initial()) {
     on<LoginEvent>(_login);
+    on<SignUpEvent>(_signUp);
   }
 
     final AuthRepos _repo;
@@ -47,6 +49,35 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await SharedPref().setString(PrefKeys.userRole, user.userRole ?? '');
        // await _repo.addUserIdFirebase(userId: user.userId.toString());
         emit(AuthState.success(userRole: user.userRole ?? ''));
+      },
+      failure: (error) {
+        emit(AuthState.error(error: error));
+      },      
+    );
+
+   
+   
+}
+
+ //// Sign Up
+
+  FutureOr<void> _signUp(
+    SignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(const AuthState.loading());
+    final result = await _repo.signUp(
+      SignUpRequestBody(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+        avatar: event.imagUrl,
+        name: nameController.text.trim(),
+      ),
+    );
+
+    result.when(
+      success: (signupData) {
+        add(const AuthEvent.login());
       },
       failure: (error) {
         emit(AuthState.error(error: error));

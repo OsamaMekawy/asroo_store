@@ -1,4 +1,5 @@
 
+import 'package:asro/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:asro/core/common/screens/under_build_screen.dart';
 import 'package:asro/core/di/injection_container.dart';
 import 'package:asro/core/routes/base_route.dart';
@@ -38,7 +39,14 @@ class AppRoutes {
           ));
         
         case signup:
-        return BaseRoute(page: const SignUp() );
+        return BaseRoute(page: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context)=>sl<UploadImageCubit>()),
+            BlocProvider(create: (context)=>sl<AuthBloc>())
+          ],
+          child: const SignUp()
+          )
+           );
         case homeAdmin:
         return BaseRoute(page: const HomeAdmin() );
         case mainCustomer:
