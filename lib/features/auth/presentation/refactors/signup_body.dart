@@ -36,7 +36,7 @@ class SignUpBody extends StatelessWidget {
               description: context.translate(LangKeys.welcome),
             ),
             SizedBox(height: 10.h),
-           const UserAvatarImage(),
+           const UserAvararImage(),
 
             SizedBox(height: 30.h),
 

@@ -3,6 +3,8 @@ import 'package:asro/core/service/graphQl/api_result.dart';
 import 'package:asro/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asro/features/auth/data/models/login_request_body.dart';
 import 'package:asro/features/auth/data/models/login_response.dart';
+import 'package:asro/features/auth/data/models/signup_reponse.dart';
+import 'package:asro/features/auth/data/models/signup_request.dart';
 import 'package:asro/features/auth/data/models/user_role_response.dart';
 
 
@@ -28,15 +30,15 @@ class AuthRepos {
   }
 
   //SignUp
-  // Future<ApiResult<SignUpResponse>> signUp(SignUpRequestBody body) async {
-  //   try {
-  //     final response = await _dataSource.signUp(body: body);
+  Future<ApiResult<SignUpResponse>> signUp(SignUpRequestBody body) async {
+    try {
+      final response = await _dataSource.signUp(body: body);
 
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return const ApiResult.failure('Please, try agian we have error');
-  //   }
-  // }
+      return ApiResult.success(response);
+    } catch (error) {
+      return const ApiResult.failure('Please, try agian we have error');
+    }
+  }
 
   // add user id in firebase to used with notfication data base
   // Future<void> addUserIdFirebase({required String userId}) async {

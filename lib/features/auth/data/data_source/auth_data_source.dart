@@ -3,6 +3,8 @@ import 'package:asro/core/service/graphQl/api_sevice.dart';
 import 'package:asro/core/service/graphQl/graphql_queries/auth/auth_queries.dart';
 import 'package:asro/features/auth/data/models/login_request_body.dart';
 import 'package:asro/features/auth/data/models/login_response.dart';
+import 'package:asro/features/auth/data/models/signup_reponse.dart';
+import 'package:asro/features/auth/data/models/signup_request.dart';
 import 'package:asro/features/auth/data/models/user_role_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
@@ -31,11 +33,11 @@ class AuthDataSource {
 
   //SignUp
 
-  // Future<SignUpResponse> signUp({required SignUpRequestBody body}) async {
-  //   final response =
-  //       await _graphql.signUp(AuthQueries().signUpMapQuery(body: body));
-  //   return response;
-  // }
+  Future<SignUpResponse> signUp({required SignUpRequestBody body}) async {
+    final response =
+        await _graphql.signUp(AuthQueries().signUpMapQuery(body: body));
+    return response;
+  }
 
   // add user id in firebase to used with notfication data base
   
